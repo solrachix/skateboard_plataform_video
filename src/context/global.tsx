@@ -7,6 +7,8 @@ import React, {
 } from 'react'
 
 import SideBar from '@/components/SideBar'
+import Layout from '@/components/Layout'
+import Header from '@/components/Header'
 
 interface GlobalContextData {
   NavBar: {
@@ -34,7 +36,11 @@ export const GlobalProvider: React.FC = ({ children }) => {
   return (
     <GlobalContext.Provider value={{ NavBar }}>
       {enableNavBar && <SideBar />}
-      {children}
+
+      <Layout>
+        <Header />
+        {children}
+      </Layout>
     </GlobalContext.Provider>
   )
 }

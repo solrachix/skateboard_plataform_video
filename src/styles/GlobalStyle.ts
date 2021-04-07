@@ -43,7 +43,9 @@ export default createGlobalStyle`
     height: 95vh;
     width: 100%;
 
-    background-color: ${props => props.theme.colors.background.normal};
+    background-color: ${props =>
+      rgba(props.theme.colors.background.darker, 0.4)};
+    backdrop-filter: blur(20px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
 
@@ -113,9 +115,18 @@ export default createGlobalStyle`
   input::-webkit-search-cancel-button {
     display: none;
   }
+  video {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    display: block;
+    cursor: pointer;
+    transition: 0.4s;
+  } 
   ::-webkit-scrollbar {
     width: 4px;
     background: ${({ theme }) => theme.colors.background.normal};
+    background-color: transparent;
   }
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => rgba(theme.colors.background.lighter, 1)};

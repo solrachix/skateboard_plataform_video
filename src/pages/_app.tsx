@@ -21,17 +21,15 @@ export default function App({
 
   return (
     <Context>
-      <Layout>
-        <PageTransition>
-          {({ Component, pageProps }) => {
-            return Component ? (
-              <Component {...pageProps} />
-            ) : (
-              <SsrComponent {...ssrPageProps} />
-            )
-          }}
-        </PageTransition>
-      </Layout>
+      <PageTransition>
+        {({ Component, pageProps }) => {
+          return Component ? (
+            <Component {...pageProps} />
+          ) : (
+            <SsrComponent {...ssrPageProps} />
+          )
+        }}
+      </PageTransition>
     </Context>
   )
 }

@@ -64,7 +64,7 @@ export const DarkTheme = {
     text: {
       light: '#fff',
       normal: '#7B7B7C',
-      dark: '#808191'
+      dark: '#717790'
     },
 
     white: '#f7f7f7',
