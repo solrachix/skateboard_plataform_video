@@ -52,19 +52,19 @@ export const DarkTheme = {
       darker: '#3846D4'
     },
     secondary: '#E02041',
-    tertiary: '#2B303A',
+    tertiary: '#252936',
 
     background: {
-      lighter: '#1C2028',
-      light: '#171719',
-      normal: '#121214',
-      dark: '#0E0E10',
-      darker: '#000'
+      lighter: '#353249',
+      light: '#2a273a',
+      normal: '#1f1d2b',
+      dark: '#121119',
+      darker: '#060508'
     },
     text: {
       light: '#fff',
       normal: '#7B7B7C',
-      dark: '#6A6180'
+      dark: '#808191'
     },
 
     white: '#f7f7f7',

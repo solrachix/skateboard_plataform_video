@@ -54,13 +54,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        {/* <script src="https://unpkg.com/kursor" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              'new kursor({ type: 1, removeDefaultCursor: true, color: "#4347FE" })'
-          }}
-        /> */}
       </Html>
     )
   }

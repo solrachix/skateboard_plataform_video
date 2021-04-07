@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { rgba } from 'polished'
 
 export const Container = styled.div`
-  position: fixed;
+  /* position: fixed;
   width: 60px;
   height: 100vh;
   padding: 6px 0px;
@@ -60,6 +60,125 @@ export const Container = styled.div`
         }
         svg {
           color: ${props => props.theme.colors.secondary};
+        }
+      }
+    }
+  } */
+
+  width: 220px;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition-duration: 0.2s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .logo {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: #22b07d;
+    flex-shrink: 0;
+    color: #fff;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+
+    &-expand {
+      text-decoration: none;
+      color: #fff;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 34px;
+      position: sticky;
+      top: 0;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 0;
+        background: ${props => props.theme.colors.background.normal};
+        width: 200px;
+        height: 70px;
+        z-index: -1;
+      }
+    }
+  }
+  &-link {
+    &:hover,
+    &.is-active {
+      color: #fff;
+      font-weight: 600;
+      &:nth-child(2n + 1) {
+        svg {
+          background: #ff7551;
+        }
+      }
+      &:nth-child(2n) {
+        svg {
+          background: #32a7e2;
+        }
+      }
+      &:nth-child(2n + 3) {
+        svg {
+          background: #6c5ecf;
+        }
+      }
+    }
+  }
+  &.collapse {
+    width: 90px;
+    border-right: 1px solid rgb(128 129 145 / 24%);
+    .logo-expand,
+    .side-title {
+      display: none;
+    }
+    .logo {
+      display: flex;
+    }
+    .side-wrapper {
+      width: 30px;
+    }
+    .side-menu svg {
+      margin-right: 30px;
+    }
+  }
+
+  .side-wrapper {
+    border-bottom: 1px solid rgb(128 129 145 / 24%);
+    padding: 36px 0;
+    width: 145px;
+    & + & {
+      border-bottom: none;
+    }
+
+    .side-title {
+      font-size: 12px;
+      letter-spacing: 0.07em;
+      margin-bottom: 24px;
+    }
+    .side-menu {
+      display: flex;
+      flex-direction: column;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: ${props => props.theme.colors.text.dark};
+        & + a {
+          margin-top: 26px;
+        }
+      }
+      svg {
+        width: 30px;
+        padding: 8px;
+        border-radius: 10px;
+        background-color: ${props => props.theme.colors.background.lighter};
+        flex-shrink: 0;
+        margin-right: 16px;
+        &:hover {
+          color: ${props => props.theme.colors.text.light};
         }
       }
     }

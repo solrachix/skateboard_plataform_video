@@ -8,40 +8,45 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html, body, #__next {
-    min-width: 99.6vw;
+    /* min-width: 100vw; */
     min-height: 100vh;
     max-width: 100vw;
     max-height: 100vh;
 
-    background: ${props => props.theme.colors.background.normal};
+    /* background: ${props => props.theme.colors.background.normal}; */
     color: ${props => props.theme.colors.text.normal};
 
+    font-size: 15px;
+    font-weight: 500;
+
     overflow-x: visible;
-  }
 
+    -webkit-font-smoothing: antialiased;
+  }
+  
   body {
-    /* background: ${props => props.theme.colors.background.normal};
-     &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+    padding: 1em 2em;
 
-      background-image: url("/images/neon2.jpg");
-      background-size: cover;
-      background-attachment: fixed;
-
-      z-index: -1;
-      opacity: 0.58;
-    } */
+    background-image: url("https://images.unsplash.com/photo-1445251836269-d158eaa028a6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1951&q=80");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
   }
+
   #__next {
     display: flex;
+    overflow: hidden;
 
-    /* background: ${props => rgba(props.theme.colors.background.dark, 0.4)};
-    backdrop-filter: blur(20px); */
+    max-width: 1240px;
+    max-height: 900px;
+    height: 95vh;
+    width: 100%;
+
+    background-color: ${props => props.theme.colors.background.normal};
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+
 
     .tabbar {
       display: none;
@@ -89,13 +94,11 @@ export default createGlobalStyle`
     outline: none;
 
     text-decoration: none;
-    // font: 400 1rem 'Nunito', 'Roboto', sans-serif;
-    font-family: 'Nunito', 'Roboto', sans-serif;
+    font-family: 'Inter', 'Roboto', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     color: ${({ theme }) => theme.colors.text.normal};
-    font-family: 'Source Serif Pro', serif;
-    /* font-family: 'Nunito', 'Roboto', sans-serif; */
+    font-family: 'Inter', 'Roboto', sans-serif;
   }
   button {
     cursor: pointer;
