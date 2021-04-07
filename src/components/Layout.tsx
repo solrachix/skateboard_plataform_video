@@ -7,11 +7,8 @@ export default styled.div.attrs(() => ({
   height: 100%;
   max-height: 100vh;
   margin: 0 auto;
-  padding: 0 0 0 60px;
+  /* padding: 90px 0 0 0; */
+  margin-top: 90px;
 
   overflow-y: auto;
-
-  @media (max-width: 600px) {
-    padding: 0 0 0 0;
-  }
 `
