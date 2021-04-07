@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('Nunito-BlackItalic.woff2') format('woff2');
+    src: url('Nunito-ExtraBoldItalic.woff2') format('woff2');
+    src: url('Nunito-SemiBold.woff2') format('woff2');
+    src: url('Nunito-SemiBoldItalic.woff2') format('woff2');
+    src: url('Nunito-Regular.woff2') format('woff2');
+    src: url('Nunito-Italic.woff2') format('woff2');
+    src: url('Nunito-Light.woff2') format('woff2');
+    src: url('Nunito-LightItalic.woff2') format('woff2');
+    src: url('Nunito-ExtraLight.woff2') format('woff2');
+    src: url('Nunito-ExtraLightItalic.woff2') format('woff2');
+
+    font-weight: 600;
+    font-style: normal;
+}
