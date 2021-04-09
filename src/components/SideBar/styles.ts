@@ -72,6 +72,8 @@ export const Container = styled.div`
   /* background-color: ${props =>
     rgba(props.theme.colors.background.darker, 0.1)}; */
 
+  color: ${props => rgba(props.theme.colors.text.light, 0.6)};
+
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
