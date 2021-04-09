@@ -39,9 +39,9 @@ export const PageTransition = ({ children, ...props }) => {
 const Page = styled(animated.main)`
   /* width: 98.6%; */
   width: 100%;
-  min-height: 100%;
-  /* max-height: 100vh; */
-  height: 100%;
+  /* min-height: 100%;
+  max-height: 100vh;
+  height: 100%; */
 
   /* & > div {
     max-height: 100vh;

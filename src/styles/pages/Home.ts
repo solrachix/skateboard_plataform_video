@@ -6,7 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
   flex-grow: 1;
 
+  height: 100%;
   padding: 20px 30px 30px;
+  margin-bottom: 90px;
+
   border: 1px solid ${props => rgba(props.theme.colors.text.light, 0.2)};
   background: ${props => rgba(props.theme.colors.background.dark, 0.4)};
 
@@ -198,7 +201,13 @@ export const Videos = styled.div`
   .video {
     position: relative;
 
-    background-color: ${props => props.theme.colors.background.light};
+    background: linear-gradient(
+      90deg,
+      ${props => rgba(props.theme.colors.text.light, 0.2)},
+      ${props => rgba(props.theme.colors.text.light, 0.1)}
+    );
+    /* box-shadow: 0px 0px 10px 0px
+      ${props => rgba(props.theme.colors.text.light, 0.4)}; */
     border-radius: 20px;
 
     overflow: hidden;
@@ -214,7 +223,7 @@ export const Videos = styled.div`
       font-size: 16px;
       line-height: 1.4em;
 
-      background-color: ${props => props.theme.colors.background.light};
+      background-color: transparent;
       color: #fff;
 
       overflow: hidden;
@@ -229,7 +238,7 @@ export const Videos = styled.div`
 
       font-size: 12px;
 
-      background-color: ${props => props.theme.colors.background.light};
+      background-color: transparent;
 
       position: relative;
     }
@@ -272,24 +281,25 @@ export const Videos = styled.div`
 
       z-index: 1;
     }
+
     &:hover {
       video {
         transform: scale(1.6);
         transform-origin: center;
       }
 
-      .video-time {
+      .time {
         display: none;
       }
 
-      .video-author {
+      .author {
         bottom: -65px;
         transform: scale(0.6);
         right: -3px;
         z-index: 10;
       }
 
-      .video-by {
+      .by {
         opacity: 0;
       }
     }
