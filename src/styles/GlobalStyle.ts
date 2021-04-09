@@ -39,6 +39,7 @@ export default createGlobalStyle`
     overflow: hidden;
 
     max-width: 1240px;
+    min-height: 100%;
     max-height: 900px;
     height: 95vh;
     width: 100%;
