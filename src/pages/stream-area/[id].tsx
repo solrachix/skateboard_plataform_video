@@ -1,7 +1,9 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import React from 'react'
 
 import { Container } from '@/styles/pages/StreamArea'
 import Avatar from '@/components/Avatar'
+import axios from 'axios'
 
 const chat = [
   {
@@ -41,7 +43,24 @@ const chat = [
     comment: 'recusandae doloremque aperiam alias molestias'
   }
 ]
-export default function StreamArea() {
+
+interface Video {
+  id: number
+  title: string
+  url: string
+  time: string
+  views: string
+  posted: string
+  author: {
+    avatar: string
+    name: string
+  }
+}
+
+type HomeStaticProps = { video: Video }
+type HomeProps = InferGetStaticPropsType<GetStaticProps<HomeStaticProps>>
+
+export default function StreamArea({ video }: HomeProps) {
   return (
     <Container className="stream-area">
       <div className="video-stream">
@@ -55,14 +74,8 @@ export default function StreamArea() {
           poster="https://images.unsplash.com/photo-1476801071117-fbc157ae3f01?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8&w=1000&q=80"
           data-setup='{ "aspectRatio":"940:620", "playbackRates": [1, 1.5, 2] }'
         >
-          <source
-            src="https://player.vimeo.com/external/390402719.sd.mp4?s=20cfdb066c4253047562b65bd4e411b86a004bc5&profile_id=139&oauth2_token_id=57447761"
-            type="video/mp4"
-          />
-          <source
-            src="https://player.vimeo.com/external/390402719.sd.mp4?s=20cfdb066c4253047562b65bd4e411b86a004bc5&profile_id=139&oauth2_token_id=57447761"
-            type="video/webm"
-          />
+          <source src={video.url} type="video/mp4" />
+          <source src={video.url} type="video/webm" />
         </video>
         <div className="video-detail">
           <div className="video-content">
@@ -72,11 +85,11 @@ export default function StreamArea() {
             >
               <Avatar
                 className="video-author video-p"
-                img="https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                img={video.author.avatar}
               />
 
               <div className="video-p-detail">
-                <div className="video-p-name">Andy William</div>
+                <div className="video-p-name">{video.author.name}</div>
                 <div className="video-p-sub">1,980,893 subscribers</div>
               </div>
               <div className="button-wrapper">
@@ -110,7 +123,7 @@ export default function StreamArea() {
               className="video-p-title anim"
               // style="--delay: .2s"
             >
-              Basic how to ride your Skateboard
+              {video.title}
             </div>
             <div
               className="video-p-subtitle anim"
@@ -239,16 +252,17 @@ export default function StreamArea() {
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      {
-        params: { id: '1' }
-      }
-    ],
+    paths: [],
     fallback: 'blocking'
   }
 }
 
 export async function getStaticProps(context) {
   const id = context.params.id
-  return { props: { id } }
+  const video = await axios.get<Video>(
+    `${process.env.SERVER_URL}/api/videos?id=${id}`
+  )
+  return {
+    props: { video: video.data }
+  }
 }

@@ -1,67 +1,25 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import React, { useEffect, useState, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
+import route from 'next/router'
+
+import axios from 'axios'
+
 import SEO from '@/components/SEO'
 import { Container, Blogs, Videos } from '@/styles/pages/Home'
 
-// interface HomeStaticProps {}
-
-// type HomeProps = InferGetStaticPropsType<GetStaticProps<HomeStaticProps>>
-
-const videos = [
-  {
-    title: 'Basic how to ride your skateboard comfortly',
-    url:
-      'https://player.vimeo.com/external/436572488.sd.mp4?s=eae5fb490e214deb9ff532dd98d101efe94e7a8b&profile_id=139&oauth2_token_id=57447761',
-    time: '8 min',
-    views: '54K views',
-    posted: '1 week ago',
-    author: {
-      avatar:
-        'https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-      name: 'Andy William'
-    }
-  },
-  {
-    title: 'Prepare for your first skateboard jump',
-    url:
-      'https://player.vimeo.com/external/449972745.sd.mp4?s=9943177fe8a6147b7bc4598259401f06ec57878a&profile_id=139&oauth2_token_id=57447761',
-    time: '5 min',
-    views: '42K views',
-    posted: '1 week ago',
-    author: {
-      avatar:
-        'https://images.pexels.com/photos/3370021/pexels-photo-3370021.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-      name: 'Gerard Bind'
-    }
-  },
-  {
-    title: 'Basic equipment to play skateboard safely',
-    url:
-      'https://player.vimeo.com/external/436553499.sd.mp4?s=0e44527f269278743db448761e35c5e39cfaa52c&profile_id=139&oauth2_token_id=57447761',
-    time: '7 min',
-    views: '64K views',
-    posted: '2 week ago',
-    author: {
-      avatar:
-        'https://images.pexels.com/photos/1870163/pexels-photo-1870163.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-      name: 'John Wise'
-    }
-  },
-  {
-    title: 'Tips to playing skateboard on the ramp',
-    url:
-      'https://player.vimeo.com/external/361861493.sd.mp4?s=19d8275ca755d653042a87ef28b2f0b2eabf57d0&profile_id=139&oauth2_token_id=57447761',
-    time: '6 min',
-    views: '50K views',
-    posted: '1 week ago',
-    author: {
-      avatar:
-        'https://images.pexels.com/photos/2889942/pexels-photo-2889942.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-      name: 'Budi Hakim'
-    }
+interface Video {
+  id: number
+  title: string
+  url: string
+  time: string
+  views: string
+  posted: string
+  author: {
+    avatar: string
+    name: string
   }
-]
-export default function Home(): ReactElement {
+}
+
+export default function Home({ videos }: { videos: Video[] }): ReactElement {
   const handleVideoHover = e => {
     const video = e.target
     video && video.play()
@@ -70,12 +28,15 @@ export default function Home(): ReactElement {
     const video = e.target
     video && video.pause()
   }
+  const handleVideoClick = (id: number) => {
+    route.push(`/stream-area/${id}`)
+  }
+
   return (
     <Container>
       <SEO title="Home" description={'Olá eu sou a description'} />
       <div
         className="header anim"
-
         // style="--delay: 0s"
       >
         Discover
@@ -154,7 +115,6 @@ export default function Home(): ReactElement {
 
       <div
         className="small-header anim"
-
         // style="--delay: .3s"
       >
         Most Watched
@@ -165,6 +125,7 @@ export default function Home(): ReactElement {
           <div
             key={video.title}
             className="video anim"
+            onClick={() => handleVideoClick(video.id)}
             // style="--delay: .4s"
           >
             <div className="time">{video.time}</div>
@@ -203,6 +164,18 @@ export default function Home(): ReactElement {
       </Videos>
     </Container>
   )
+}
+
+export const getServerSideProps = async () => {
+  const videos = await axios.get<Video[]>(
+    `${process.env.SERVER_URL}/api/videos`
+  )
+
+  return {
+    props: {
+      videos: videos.data
+    }
+  }
 }
 
 // export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {

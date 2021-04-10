@@ -11,7 +11,7 @@ module.exports = withPlugins([
       ignoreBuildErrors: true
     },
     env: {
-      SERVER_URL: 'http://localhost:3333',
+      SERVER_URL: 'http://localhost:3000',
       NEXT_PUBLIC_SITE_URL: 'http://localhost:3000'
     }
   },
