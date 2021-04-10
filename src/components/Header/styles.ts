@@ -101,4 +101,9 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 20px;
+  }
 `

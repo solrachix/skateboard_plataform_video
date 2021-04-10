@@ -77,6 +77,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  /* justify-content: center; */
+  align-items: center;
 
   transition-duration: 0.2s;
   overflow-y: auto;
@@ -94,30 +96,30 @@ export const Container = styled.div`
     align-items: center;
     border-radius: 50%;
     justify-content: center;
+  }
+  .logo-expand {
+    position: sticky;
+    top: 0;
+    width: 100%;
 
-    .expand {
-      position: sticky;
-      top: 0;
+    color: #fff;
 
-      color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 34px;
 
-      text-decoration: none;
-      font-size: 19px;
-      font-weight: 600;
-      line-height: 34px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 200px;
+      height: 70px;
 
-      &:before {
-        content: '';
-        position: absolute;
-        top: -30px;
-        left: 0;
-        width: 200px;
-        height: 70px;
+      /* background: ${props => props.theme.colors.background.normal}; */
 
-        /* background: ${props => props.theme.colors.background.normal}; */
-
-        z-index: -1;
-      }
+      z-index: -1;
     }
   }
 
@@ -158,6 +160,8 @@ export const Container = styled.div`
         width: 16px;
         margin-right: 8px;
 
+        flex-shrink: 0;
+
         color: ${props => props.theme.colors.text.light};
       }
 
@@ -173,8 +177,10 @@ export const Container = styled.div`
   }
 
   &.collapse {
-    width: 90px;
+    width: 36px;
+
     border-right: 1px solid rgb(128 129 145 / 24%);
+
     .logo-expand,
     .side-title {
       display: none;
@@ -183,10 +189,12 @@ export const Container = styled.div`
       display: flex;
     }
     .side-wrapper {
-      width: 30px;
+      width: 40px;
     }
     .side-menu svg {
+      width: 100%;
       margin-right: 30px;
+      /* margin-left: 10%; */
     }
   }
 `

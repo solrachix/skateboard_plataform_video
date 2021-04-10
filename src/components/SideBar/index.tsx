@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
@@ -8,6 +8,20 @@ import { Container } from './styles'
 const SideBar: React.FC = () => {
   const router = useRouter()
 
+  useEffect(() => {
+    handleSizeBar()
+
+    window.addEventListener('resize', handleSizeBar)
+  }, [])
+
+  const handleSizeBar = () => {
+    const sidebar = document.querySelector('.sidebar') as HTMLDivElement
+    if (window.innerWidth > 1090) {
+      sidebar.classList.remove('collapse')
+    } else {
+      sidebar.classList.add('collapse')
+    }
+  }
   return (
     <Container className="sidebar">
       {/* <Logo className="logo" /> */}

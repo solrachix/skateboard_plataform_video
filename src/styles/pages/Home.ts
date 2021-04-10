@@ -185,6 +185,19 @@ export const Blogs = styled.div`
       background-blend-mode: overlay;
     }
   }
+  @media screen and (max-width: 735px) {
+    flex-wrap: wrap;
+
+    .blog,
+    .blog + .blog {
+      width: 100%;
+    }
+    .blog + .blog {
+      margin-left: 0;
+      margin-top: 20px;
+      background-size: cover;
+    }
+  }
 `
 export const Videos = styled.div`
   width: 100%;
@@ -193,10 +206,6 @@ export const Videos = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-
-  @media screen and (max-width: 980px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .video {
     position: relative;
@@ -316,5 +325,13 @@ export const Videos = styled.div`
         color: #fff;
       }
     }
+  }
+
+  @media screen and (max-width: 980px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 735px) {
+    grid-template-columns: 1fr;
   }
 `

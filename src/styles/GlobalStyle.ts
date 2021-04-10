@@ -50,20 +50,6 @@ export default createGlobalStyle`
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
 
-
-    .tabbar {
-      display: none;
-    }
-
-    @media (max-width: 600px) {
-      .tabbar {
-        display: block;
-      }
-      .sidebar {
-        display: none;
-      }
-    }
-
     &.navbar-false {
       /* grid-template-columns: 100%;
       grid-template-rows: 100%;
@@ -91,6 +77,17 @@ export default createGlobalStyle`
     }
   }
 
+  @media (max-width: 600px) {
+    body {
+      padding: 0;
+    }
+    #__next{
+      height: 100vh;
+      border-radius: 0;
+      max-height: 100%;
+      }
+    }
+  }
 
   body, input, textarea, button, select, a {
     color: inherit;
