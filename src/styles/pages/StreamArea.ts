@@ -189,64 +189,91 @@ export const Container = styled.div`
 
     .chat {
       &.video {
-        background-color: #252836;
-        border-radius: 20px;
-        padding: 0 20px;
         max-height: 414px;
         overflow: auto;
+
+        background-color: ${props =>
+          rgba(props.theme.colors.background.dark, 0.4)};
+        border-radius: 20px;
+
+        &::-webkit-scrollbar {
+          width: 0px;
+        }
       }
 
       &.header {
         display: flex;
         align-items: center;
-        padding: 20px 0;
+        padding: 20px;
+
         font-size: 16px;
         font-weight: 600;
+
         color: #fff;
+        background-color: ${props =>
+          rgba(props.theme.colors.background.normal, 0.4)};
+        border-bottom: 1px solid
+          ${props => rgba(props.theme.colors.background.dark, 0.4)};
+        backdrop-filter: blur(2px);
+        border-radius: 20px 20px 0 0;
+
         position: sticky;
         top: 0;
-        background-color: #252836;
         left: 0;
+
         z-index: 1;
-        border-bottom: 1px solid var(--border-color);
+
         svg {
           width: 15px;
           margin-right: 6px;
           flex-shrink: 0;
         }
+
         span {
           margin-left: auto;
-          color: var(--body-color);
+
+          color: ${props => props.theme.colors.text.normal};
           font-size: 12px;
+
           display: flex;
           align-items: center;
         }
       }
       &.footer {
-        display: flex;
-        align-items: center;
         position: sticky;
         bottom: 0;
         left: 0;
-        width: calc(100% + 20px);
+
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        padding: 0 20px;
         padding-bottom: 12px;
-        background-color: #252836;
+        padding-top: 6px;
+
+        background-color: ${props =>
+          rgba(props.theme.colors.background.normal, 0.4)};
+        border-radius: 0 0 20px 20px;
+        backdrop-filter: blur(2px);
 
         input {
-          width: 100%;
-          border: 0;
-          background-color: #2d303e;
-          border-radius: 20px;
-          font-size: 12px;
-          color: #fff;
+          width: calc(100% - 20px);
           margin-left: -10px;
           padding: 12px 40px;
+
+          font-size: 12px;
           font-weight: 500;
-          font-family: var(--body-font);
+
+          background-color: ${props =>
+            rgba(props.theme.colors.background.dark, 0.8)};
+          color: #fff;
           background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 12C2 6.48 6.47 2 12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10C6.47 22 2 17.52 2 12zm5.52 1.2c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2.66 0 1.19.54 1.19 1.2 0 .66-.53 1.2-1.19 1.2zM10.8 12c0 .66.54 1.2 1.2 1.2.66 0 1.19-.54 1.19-1.2a1.194 1.194 0 10-2.39 0zm4.48 0a1.195 1.195 0 102.39 0 1.194 1.194 0 10-2.39 0z' fill='%236c6e78'/%3e%3c/svg%3e");
           background-repeat: no-repeat;
           background-size: 24px;
           background-position: 8px;
+          border: 0;
+          border-radius: 20px;
 
           &::placeholder {
             color: #6c6e78;
@@ -337,7 +364,10 @@ export const Container = styled.div`
   .message {
     display: flex;
     align-items: center;
+
     margin-top: 18px;
+    padding: 0 20px;
+
     &:last-child {
       margin-bottom: 18px;
     }

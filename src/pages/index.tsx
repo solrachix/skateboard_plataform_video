@@ -177,10 +177,3 @@ export const getServerSideProps = async () => {
     }
   }
 }
-
-// export const getStaticProps: GetStaticProps<HomeStaticProps> = async () => {
-//   return {
-//     revalidate: 86400,
-//     props: {}
-//   }
-// }

@@ -62,7 +62,6 @@ export default function (req, res) {
     const response = videos.find(
       video => Number(video.id) === Number(req.query.id)
     )
-    console.log(response)
 
     return response
       ? res.status(200).json(response)
