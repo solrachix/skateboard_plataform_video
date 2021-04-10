@@ -58,7 +58,7 @@ export const DarkTheme = {
       lighter: '#353249',
       light: '#2a273a',
       normal: '#1f1d2b',
-      dark: '#121119',
+      dark: '#10121b',
       darker: '#060508'
     },
     text: {

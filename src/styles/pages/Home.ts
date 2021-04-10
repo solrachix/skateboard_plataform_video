@@ -217,10 +217,17 @@ export const Videos = styled.div`
     );
     /* box-shadow: 0px 0px 10px 0px
       ${props => rgba(props.theme.colors.text.light, 0.4)}; */
+    border: 1px solid
+      ${props => rgba(props.theme.colors.background.normal, 0.4)};
     border-radius: 20px;
 
     overflow: hidden;
     transition: 0.4s;
+
+    &:hover {
+      transform: scale(1.02);
+      background: ${props => rgba(props.theme.colors.background.dark, 0.4)};
+    }
 
     .wrapper {
       position: relative;
