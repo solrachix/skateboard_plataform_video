@@ -49,10 +49,17 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
             rel="stylesheet"
           />
+
+          <link
+            href="https://vjs.zencdn.net/7.11.4/video-js.css"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
+
+          <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
         </body>
       </Html>
     )

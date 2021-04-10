@@ -10,9 +10,6 @@ export const Container = styled.div`
   padding: 20px 30px 30px;
   margin-bottom: 90px;
 
-  border: 1px solid ${props => rgba(props.theme.colors.text.light, 0.2)};
-  background: ${props => rgba(props.theme.colors.background.dark, 0.4)};
-
   overflow: auto;
 
   .anim {
@@ -44,7 +41,7 @@ export const Container = styled.div`
       padding: 4px;
       border-radius: 50%;
       object-fit: cover;
-      &__wrapper {
+      &.author-wrapper {
         position: relative;
         flex-shrink: 0;
         svg {
@@ -135,7 +132,7 @@ export const Blogs = styled.div`
         border-color: rgb(255 255 255 / 75%);
         margin-top: 14px;
       }
-      .author-img__wrapper svg {
+      .author-img author-wrapper svg {
         border-color: #ffe6b2;
         color: #e7bb7d;
       }

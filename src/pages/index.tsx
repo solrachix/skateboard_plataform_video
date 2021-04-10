@@ -91,7 +91,7 @@ export default function Home(): ReactElement {
             How to do Basic Jumping and how to landing safely
           </div>
           <div className="blog_author">
-            <div className="author-img__wrapper">
+            <div className="author-img author-wrapper">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -125,7 +125,7 @@ export default function Home(): ReactElement {
           <div className="blog__title">Skateboard Tips You need to know</div>
           <div className="blog_author tips">
             <div className="blog_time">7 min</div>
-            <div className="author-img__wrapper">
+            <div className="author-img author-wrapper">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -176,7 +176,7 @@ export default function Home(): ReactElement {
               >
                 <source src={video.url} type="video/mp4" />
               </video>
-              <div className="author-img__wrapper author">
+              <div className="author-img author-wrapper author">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
