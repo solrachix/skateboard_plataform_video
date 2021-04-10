@@ -6,15 +6,10 @@ export const PageTransition = ({ children, ...props }) => {
   const router = useRouter()
 
   const transitions = useTransition(router, router => router.pathname, {
-    from: { opacity: 0, transform: 'translate3d(100vw, 0, 0)' },
+    from: { opacity: 0, transform: 'translate3d(0, 100vw, 0)' },
     enter: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-    leave: { opacity: 0, transform: 'translate3d(-100vw, 0, 0)' },
-    config: config.wobbly
-
-    // from: { transform: 'translateY(-2000px)' },
-    // enter: { transform: 'translateY(0)' },
-    // leave: { transform: 'translateY(200px)' },
-    // config: config.stiff
+    leave: { opacity: 0, transform: 'translate3d(0, -100vw, 0)' },
+    config: config.gentle
   })
 
   return (
