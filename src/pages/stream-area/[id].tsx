@@ -4,6 +4,7 @@ import React from 'react'
 import { Container } from '@/styles/pages/StreamArea'
 import Avatar from '@/components/Avatar'
 import axios from 'axios'
+import Video from '@/components/Video'
 
 const chat = [
   {
@@ -64,19 +65,8 @@ export default function StreamArea({ video }: HomeProps) {
   return (
     <Container className="stream-area">
       <div className="video-stream">
-        <video
-          id="my_video_1"
-          className="video-js vjs-default-skin anim"
-          width="640px"
-          height="267px"
-          controls
-          preload="none"
-          poster="https://images.unsplash.com/photo-1476801071117-fbc157ae3f01?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8&w=1000&q=80"
-          data-setup='{ "aspectRatio":"940:620", "playbackRates": [1, 1.5, 2] }'
-        >
-          <source src={video.url} type="video/mp4" />
-          <source src={video.url} type="video/webm" />
-        </video>
+        <Video src={video.url} />
+
         <div className="video-detail">
           <div className="video-content">
             <div
