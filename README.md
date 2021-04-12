@@ -1,4 +1,6 @@
-# Skateboard Plataform Video
+
+
+ # Skateboard Plataform Video
 
 <p align="center">Skate video platform, I did it to practice js and react ... Learning to deal with blur and classmorphism! See it working here: https://skateboard-plataform-video.vercel.app/
 
@@ -6,19 +8,16 @@
 
 <p align="center">
   <a href="https://github.com/solrachix">
-  <img alt="Made by Carlos Miguel" src="https://img.shields.io/badge/-Github-04d361?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/solrachix" />
+  <img alt="Made by Carlos Miguel" src="https://img.shields.io/badge/-Github-272556?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/solrachix" />
   </a>
    <a href="https://www.linkedin.com/in/carlos-miguel-380413197">
-      <img alt="Carlos Miguel" src="https://img.shields.io/badge/-Carlos%20Miguel-04d361?style=for-the-badge&logo=Linkedin&logoColor=white" />
+      <img alt="Carlos Miguel" src="https://img.shields.io/badge/-Carlos%20Miguel-272556?style=for-the-badge&logo=Linkedin&logoColor=white" />
    </a>
-     <a aria-label="Completed" href="https://nextlevelweek.com/episodios/omnistack/edicao/2">
-    <img src="https://img.shields.io/badge/landing_page_template_3-11.01.20-04d361?style=for-the-badge&labelColor=04d361"></img>
-  </a>
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/solrachix/skateboard_plataform_video?style=for-the-badge&label=Repo%20Size:&labelColor=04d361&color=04d361">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/solrachix/skateboard_plataform_video?style=for-the-badge&label=Repo%20Size:&labelColor=272556&color=272556">
   <a href="https://github.com/solrachix/skateboard_plataform_video/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/solrachix/skateboard_plataform_video?style=for-the-badge&label=last%20commit:&labelColor=04d361&color=04d361">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/solrachix/skateboard_plataform_video?style=for-the-badge&label=last%20commit:&labelColor=272556&color=272556">
   </a>
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-04d361?style=for-the-badge&labelColor=04d361&color=04d361">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-272556?style=for-the-badge&labelColor=272556&color=272556">
   <br />
   <a href="https://github.com/solrachix/skateboard_plataform_video/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/solrachix/skateboard_plataform_video?color=FF4400&logo=github">
