@@ -26,8 +26,8 @@ export default createGlobalStyle`
   
   body {
     padding: 1em 2em;
-
-    background-image: url("https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg");
+    /* https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-5120x2880-1432.jpg */
+    background-image: url("/images/background.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
