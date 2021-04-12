@@ -34,6 +34,8 @@ export default createGlobalStyle`
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: color-dodge;
+
+    display: flex;
   }
 
   #__next {
@@ -45,6 +47,7 @@ export default createGlobalStyle`
     max-height: 900px;
     height: 95vh;
     width: 100%;
+    margin: auto;
 
     background-color: ${props =>
       rgba(props.theme.colors.background.darker, 0.4)};
