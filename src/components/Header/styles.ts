@@ -102,6 +102,26 @@ export const Container = styled.div`
     }
   }
 
+  .dark-light {
+    margin-left: 24px;
+    /* padding: 8px; */
+
+    /* background-color: ${props => props.theme.colors.background.normal}; */
+    /* box-shadow: -1px 3px 8px -1px rgb(0 0 0 / 20%); */
+    /* border-radius: 50%; */
+
+    z-index: 3;
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      flex-shrink: 0;
+      fill: ${props => props.theme.colors.text.light};
+      stroke: ${props => props.theme.colors.text.light};
+      transition: 0.5s;
+    }
+  }
+
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 20px;

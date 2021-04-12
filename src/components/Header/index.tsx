@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react'
+
+import { useTheme } from '@/context/theme'
+
 import { Container } from './styles'
 
 function Header() {
+  const { theme, changeTheme } = useTheme()
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -12,6 +16,10 @@ function Header() {
       container.style.width = `${layout.offsetWidth}px`
     }
   }, [])
+
+  const handleTheme = () => {
+    changeTheme(theme.title === 'Dark' ? 'Light' : 'Dark')
+  }
   return (
     <Container ref={containerRef}>
       <div className="search-bar">
@@ -37,6 +45,18 @@ function Header() {
             />
           </svg>
         </div>
+      </div>
+      <div className="dark-light" onClick={handleTheme}>
+        <svg
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
       </div>
     </Container>
   )
