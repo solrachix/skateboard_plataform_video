@@ -11,7 +11,7 @@ module.exports = withPlugins([
       ignoreBuildErrors: true
     },
     env: {
-      SERVER_URL: 'http://localhost:3000',
+      SERVER_URL: 'https://skateboard-plataform-video.vercel.app',
       NEXT_PUBLIC_SITE_URL: 'http://localhost:3000'
     }
   },

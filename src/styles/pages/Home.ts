@@ -93,16 +93,23 @@ export const Container = styled.div`
     margin: 30px 0 20px;
   }
 `
+
 export const Blogs = styled.div`
   display: flex;
   align-items: center;
 
   .blog {
-    background: url('https://assets.codepen.io/3364143/skate-removebg-preview.png')
-      no-repeat;
     background-size: 80%;
     background-position-x: 150px;
-    background-color: #31abbd;
+    background-image: url('https://assets.codepen.io/3364143/skate-removebg-preview.png')
+      no-repeat;
+    background: linear-gradient(
+      90deg,
+      ${props => rgba(props.theme.colors.text.light, 0.2)},
+      ${props => rgba(props.theme.colors.text.light, 0.1)}
+    );
+    border: 1px solid
+      ${props => rgba(props.theme.colors.background.normal, 0.4)};
 
     position: relative;
 
