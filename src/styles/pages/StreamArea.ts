@@ -209,7 +209,7 @@ export const Container = styled.div`
         font-size: 16px;
         font-weight: 600;
 
-        color: #fff;
+        color: ${props => props.theme.colors.text.light};
         background-color: ${props =>
           rgba(props.theme.colors.background.normal, 0.4)};
         border-bottom: 1px solid

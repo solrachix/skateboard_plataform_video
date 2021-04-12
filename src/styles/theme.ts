@@ -1,4 +1,17 @@
 // import { shade } from 'polished'
+// --theme-bg-color: rgb(255 255 255 / 31%);
+// --theme-color: #3c3a3a;
+// --inactive-color: #333333;
+//  --button-inactive: #3c3a3a;
+// --search-bg: rgb(255 255 255 / 31%);
+// --dropdown-bg: #f7f7f7;
+// --overlay-bg: rgb(255 255 255 / 30%);
+// --dropdown-hover: rgb(236 236 236);
+// --border-color: rgb(255 255 255 / 35%);
+// --popup-bg: rgb(255 255 255);
+// --hover-menu-bg: rgba(255 255 255 / 35%);
+// --scrollbar-bg: rgb(255 253 253 / 57%);
+// --content-title-color: --theme-color;
 
 export const LightTheme = {
   title: 'Light',
@@ -11,19 +24,19 @@ export const LightTheme = {
       darker: '#3846D4'
     },
     secondary: '#E02041',
-    tertiary: '#F0F0F7',
+    tertiary: '#fff',
 
     background: {
-      lighter: '#2c323f',
-      light: '#232832',
-      normal: '#F0F0F7',
-      dark: '#161a20',
-      darker: '#12151a'
+      lighter: '#fff',
+      light: '#fff',
+      normal: '#353249',
+      dark: '#fff',
+      darker: '#fff'
     },
     text: {
-      light: '#D4C2FF',
-      normal: '#9C98A6',
-      dark: '#6A6180'
+      light: '#fff',
+      normal: '#eaeaea',
+      dark: '#d0d0d0'
     },
 
     white: '#f7f7f7',
@@ -37,7 +50,7 @@ export const LightTheme = {
     blue: '#2436e8' /** #5659eb */,
     lightBlue: '#3AC5FF',
     red: '#E96379',
-    yellow: '#e7de79'
+    yellow: '#FFC500'
   }
 }
 

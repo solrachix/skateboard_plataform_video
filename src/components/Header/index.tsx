@@ -14,6 +14,11 @@ function Header() {
     if (container) {
       const layout = container.closest('#layout') as HTMLDivElement
       container.style.width = `${layout.offsetWidth}px`
+
+      window.addEventListener(
+        'resize',
+        () => (container.style.width = `${layout.offsetWidth}px`)
+      )
     }
   }, [])
 

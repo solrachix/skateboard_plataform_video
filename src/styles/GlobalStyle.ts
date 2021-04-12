@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 import { rgba } from 'polished'
 
 export default createGlobalStyle`
@@ -6,6 +6,8 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    transition: background-color 1s;
   }
   html, body, #__next {
     /* min-width: 100vw; */
