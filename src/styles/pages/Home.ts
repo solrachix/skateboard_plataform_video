@@ -99,17 +99,14 @@ export const Blogs = styled.div`
   align-items: center;
 
   .blog {
-    background-size: 80%;
-    background-position-x: 150px;
-    background-image: url('https://assets.codepen.io/3364143/skate-removebg-preview.png')
-      no-repeat;
     background: linear-gradient(
-      90deg,
-      ${props => rgba(props.theme.colors.text.light, 0.2)},
-      ${props => rgba(props.theme.colors.text.light, 0.1)}
-    );
-    border: 1px solid
-      ${props => rgba(props.theme.colors.background.normal, 0.4)};
+        90deg,
+        ${props => rgba(props.theme.colors.text.light, 0.2)},
+        ${props => rgba(props.theme.colors.text.light, 0.1)}
+      ),
+      url('https://assets.codepen.io/3364143/skate-removebg-preview.png')
+        no-repeat 150px/80%;
+    border: 1px solid ${props => rgba(props.theme.colors.background.dark, 0.4)};
 
     position: relative;
 

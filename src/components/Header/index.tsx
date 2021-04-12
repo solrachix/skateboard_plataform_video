@@ -1,19 +1,21 @@
+import { useEffect, useRef } from 'react'
 import { Container } from './styles'
 
 function Header() {
-  const KeyUp = e => {
-    console.log(mask(e.target.value, 'R$ ##,##'))
-  }
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  function mask(value, pattern) {
-    let i = 0
-    const v = value.toString()
-    return pattern.replace(/#/g, () => v[i++] || '')
-  }
+  useEffect(() => {
+    const container = containerRef.current
+
+    if (container) {
+      const layout = container.closest('#layout') as HTMLDivElement
+      container.style.width = `${layout.offsetWidth}px`
+    }
+  }, [])
   return (
-    <Container>
+    <Container ref={containerRef}>
       <div className="search-bar">
-        <input type="text" placeholder="Search" onKeyUp={KeyUp} />
+        <input type="text" placeholder="Search" />
       </div>
       <div className="user-settings">
         <img
