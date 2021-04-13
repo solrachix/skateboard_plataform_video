@@ -1,0 +1,9 @@
+{
+  "project_name": "Skateboard Plataform Video",
+  "type": "web",
+  
+  "template_url": "./public/images/template.png",
+  "logo_url": null,
+
+  "web": "./"
+}
